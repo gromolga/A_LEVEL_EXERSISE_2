@@ -9,19 +9,44 @@ namespace A_LEVEL_EXERSISE_2
             string a;
             string b;
             string c;
-            double x1;
-            double x2;
+            double x1 = 0;
+            double x2 = 0;
+            double discriminant;
+            double[] results;
 
-            Console.Write("Enter A value (value must be numeric): ");
+            Console.WriteLine("Enter a value. Value must be a number");
             a = Console.ReadLine();
 
-            Console.Write("Enter B value (value must be numeric): ");
+            Console.WriteLine("Enter b value. Value must be a number");
             b = Console.ReadLine();
 
-            Console.Write("Enter C value (value must be numeric): ");
+            Console.WriteLine("Enter c value. Value must be a number");
             c = Console.ReadLine();
+       
+            int intA = int.Parse(a);
+            int intB = int.Parse(b);
+            int intC = int.Parse(c);
 
-            Console.WriteLine($"a is: {a}; b is: {b}; c is: {c};");
+            discriminant = Math.Pow(intB, 2) - 4 * intA * intC;
+
+            if (discriminant < 0)
+            {
+                Console.Write("The equation hasn't x1, x2");
+            }
+            if (discriminant == 0)
+            {
+                x1 = -intB / (2 * intA);
+
+                Console.WriteLine($"The X1 is:  {x1}");
+            }
+            else if (discriminant > 0)
+            {
+                x1 = (-intB + Math.Sqrt(discriminant)) / (2 * intA);
+                x2 = (-intB - Math.Sqrt(discriminant)) / (2 * intA);
+
+                Console.WriteLine($"The X1 is:  {x1}");
+                Console.WriteLine($"The X2 is:  {x2}");
+            }
         }
     }
 }
