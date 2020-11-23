@@ -9,22 +9,34 @@ namespace A_LEVEL_EXERSISE_2
         {
             bool continueValueInput;
             do {
-                string a;
-                string b;
-                string c;
-                double x1 = 0;
-                double x2 = 0;
+                int a;
+                int b;
+                int c;
+                double x1;
+                double x2;
                 double discriminant;
                 double[] results;
 
-                Console.WriteLine("Enter a value. Value must be a number");
-                a = Console.ReadLine();
+                do
+                {
+                    Console.WriteLine("Enter a value. Value must be a number");
+                } while (
+                    !int.TryParse(Console.ReadLine(), out a)
+                );
 
-                Console.WriteLine("Enter b value. Value must be a number");
-                b = Console.ReadLine();
+                do
+                {
+                    Console.WriteLine("Enter b value. Value must be a number");
+                } while (
+                    !int.TryParse(Console.ReadLine(), out b)
+                );
 
-                Console.WriteLine("Enter c value. Value must be a number");
-                c = Console.ReadLine();
+                do
+                {
+                    Console.WriteLine("Enter c value. Value must be a number");
+                } while (
+                    !int.TryParse(Console.ReadLine(), out c)
+                );
 
                 Calculation calculation = new Calculation();
 
